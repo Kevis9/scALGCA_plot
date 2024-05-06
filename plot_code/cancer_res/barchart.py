@@ -17,10 +17,6 @@ def draw_barplot(data, save_path):
     hue_order = ['scGCA', 'scGCN', 'SingleR', 'seurat', 'scmap']
     ax = sns.barplot(x="exp", y="val", hue="method", data=data, palette=sns.color_palette(colors), hue_order=hue_order, width=.8)            
     plt.xticks(rotation=90)
-    # 设置y轴的范围
-    plt.ylim(0.2, 1)
-    # 图例设置为右边居中    
-    plt.legend(bbox_to_anchor=(1, 0.7), ncol=1)
     ax.set_ylabel('')                    
     plt.savefig(save_path, dpi=300, transparent=True, bbox_inches="tight")
     plt.clf()
